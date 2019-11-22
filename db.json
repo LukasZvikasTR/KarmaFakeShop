@@ -15,7 +15,7 @@
       }
     ],
     "purchaseId": "ec0ee3e4-d859-467d-81f8-2f2a409e2295",
-    "status": "PENDING_PAYMENT",
+    "status": "PAID",
     "userId": "123456"
   }
 }

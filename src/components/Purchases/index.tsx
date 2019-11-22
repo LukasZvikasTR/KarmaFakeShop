@@ -295,7 +295,8 @@ const Purchases: FC<{}> = () => {
                 style={{
                   backgroundColor: "green",
                   color: "white",
-                  marginBottom: 20
+                  marginBottom: 20,
+                  border: "none"
                 }}
               >
                 {purchaseInfo.status.split("_")[0].toLowerCase() !== "paid"
