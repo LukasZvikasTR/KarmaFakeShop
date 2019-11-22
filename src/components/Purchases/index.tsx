@@ -58,8 +58,10 @@ const Purchases: FC<{}> = () => {
         marginTop: 20
       }}
     >
-      ORDER DATE:
-      <div>21 Nov, 2019</div>
+      <div>
+        ORDER DATE:
+        <div>22 Nov, 2019</div>
+      </div>
     </div>
   );
 
@@ -71,8 +73,8 @@ const Purchases: FC<{}> = () => {
         marginTop: 20
       }}
     >
-      <div style={{ marginBottom: 5 }}>ORDER NO.:</div>
-      <div>123123123</div>
+      PAYMENT DUE DATE:
+      <div>22 Dec, 2019</div>
     </div>
   );
 
@@ -236,7 +238,8 @@ const Purchases: FC<{}> = () => {
             backgroundColor: "white",
             width: "100%",
             height: 140,
-            display: "flex"
+            display: "flex",
+            paddingBottom: 30
           }}
         >
           <div
@@ -250,8 +253,8 @@ const Purchases: FC<{}> = () => {
             }}
           >
             {renderEstimatedDelivery()}
-            {renderOderNum()}
             {renderOrderDate()}
+            {renderOderNum()}
           </div>
         </div>
 

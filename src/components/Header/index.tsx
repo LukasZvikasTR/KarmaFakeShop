@@ -4,7 +4,14 @@ import { Styled } from "./styles";
 const Header: FC<{}> = () => {
   return (
     <Styled.HeaderWrapper>
-      <Styled.Cameleon style={{ fontSize: 36, fontWeight: "bold" }}>
+      <Styled.Cameleon
+        style={{
+          fontSize: 36,
+          fontWeight: "bold",
+          position: "absolute",
+          left: 20
+        }}
+      >
         CHAMELEON
       </Styled.Cameleon>
       <Styled.HeaderItem>
@@ -12,7 +19,6 @@ const Header: FC<{}> = () => {
           ? "CHECKOUT"
           : "PURCHASES"}
       </Styled.HeaderItem>
-      <div style={{ width: 350 }} />
     </Styled.HeaderWrapper>
   );
 };

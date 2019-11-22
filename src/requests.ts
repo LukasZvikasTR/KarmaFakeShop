@@ -23,7 +23,7 @@ export const createPurchase = async () => {
 };
 
 export const getPurchase = async (id: string) => {
-  const result = await axios.get(`http://localhost:8080/purchases/last`);
+  const result = await axios.get(`http://localhost:3000/purchases/last`);
 
   if (result.data) return result.data;
 

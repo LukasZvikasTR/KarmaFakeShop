@@ -3,6 +3,7 @@ import Heading from "../Heading";
 import { SeparatorLine } from "../../commonStyles";
 import styled from "styled-components";
 import { createPurchase } from "../../requests";
+import Karma from "../../karmasign.png";
 
 export const PaymentContent = styled.div`
   background-color: #fff;
@@ -102,9 +103,18 @@ const ShoppingCart: FC<{}> = () => (
       </div>
       <PaymentButton
         onClick={createPurchase}
-        style={{ backgroundColor: "magenta", color: "#fff" }}
+        style={{
+          backgroundColor: "#000",
+          color: "#fff",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100%",
+          textAlign: "center"
+        }}
       >
-        Pay Later with KarmaPay
+        <img src={Karma} style={{ marginRight: 8, height: 25, width: 25 }} />
+        Pay Later with Karma
       </PaymentButton>
     </PaymentContent>
   </div>
