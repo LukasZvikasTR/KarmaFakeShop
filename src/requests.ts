@@ -7,10 +7,10 @@ export const createPurchase = async () => {
       {
         amount: 80 * 100,
         currency: "GBP",
-        itemDescription: "Nike Air Force 1 '07 Trainers In White, White UK 6",
+        itemDescription: "Peace sneakers, UK 6",
         itemId: "12112213",
         itemPictureUrl:
-          "https://images.asos-media.com/products/nike-air-force-1-07-trainers-in-white/12257646-1-white?$l$",
+          "https://cs1.livemaster.ru/storage/f9/29/649dcf09484b3433acce2c6992d3--handmade-shoes-hand-painted-sneakers-hippie-peace-symbol-rain.jpg",
         quantity: 1
       }
     ],
