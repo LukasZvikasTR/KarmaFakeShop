@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import Heading from "../Heading";
 import { SeparatorLine } from "../../commonStyles";
 import styled from "styled-components";
+import { createPurchase } from "../../requests";
 
 export const PaymentContent = styled.div`
   background-color: #fff;
@@ -99,7 +100,10 @@ const ShoppingCart: FC<{}> = () => (
       >
         OR
       </div>
-      <PaymentButton style={{ backgroundColor: "magenta", color: "#fff" }}>
+      <PaymentButton
+        onClick={createPurchase}
+        style={{ backgroundColor: "magenta", color: "#fff" }}
+      >
         Pay Later with KarmaPay
       </PaymentButton>
     </PaymentContent>
