@@ -1,12 +1,31 @@
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import Heading from "../Heading";
 import { SeparatorLine } from "../../commonStyles";
 import { PaymentButton } from "../ShoppingCart";
+import { getPurchase } from "../../requests";
 
 const Purchases: FC<{}> = () => {
   const urlParams = new URLSearchParams(window.location.search);
 
   const purchaseId = urlParams.get("purchaseId");
+
+  const [purchaseInfo, setPurchaseInfo] = useState();
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+
+      const result = await getPurchase(purchaseId || "");
+
+      setLoading(false);
+      if (result) {
+        console.log("RE", result);
+        setPurchaseInfo(result);
+      }
+    };
+    fetchData();
+  }, []);
 
   const renderMainHeading = () => (
     <div
@@ -99,7 +118,9 @@ const Purchases: FC<{}> = () => {
     </div>
   );
 
-  return (
+  return loading || !purchaseInfo ? (
+    <div> Loading...</div>
+  ) : (
     <div
       style={{
         height: "100vh",
@@ -265,7 +286,22 @@ const Purchases: FC<{}> = () => {
               Nike Air Force 1 '07 Trainers In White, White UK 6
             </div>
           </div>
-          <div>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <PaymentButton
+              style={{
+                backgroundColor: "white",
+                color: "black",
+                borderColor:
+                  purchaseInfo.status.split("_")[0].toLowerCase() === "pending"
+                    ? "#fed8b1"
+                    : "green",
+                marginBottom: 20
+              }}
+            >
+              {purchaseInfo.status.split("_")[0].toLowerCase() === "pending"
+                ? "Payment pending"
+                : "Paid"}
+            </PaymentButton>
             <PaymentButton
               style={{
                 backgroundColor: "white",
@@ -276,7 +312,6 @@ const Purchases: FC<{}> = () => {
             >
               View Order{" "}
             </PaymentButton>
-
             <PaymentButton
               onClick={() =>
                 (window.location.href = `http://localhost:8080/pay/${purchaseId}`)
