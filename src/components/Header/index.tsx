@@ -5,7 +5,7 @@ const Header: FC<{}> = () => {
   return (
     <Styled.HeaderWrapper>
       <Styled.Cameleon style={{ fontSize: 36, fontWeight: "bold" }}>
-        CAMELEON
+        CHAMELEON
       </Styled.Cameleon>
       <Styled.HeaderItem>
         {window.location.pathname.includes("checkout")

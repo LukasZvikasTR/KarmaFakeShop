@@ -298,7 +298,7 @@ const Purchases: FC<{}> = () => {
                 marginBottom: 20
               }}
             >
-              {purchaseInfo.status.split("_")[0].toLowerCase() === "pending"
+              {purchaseInfo.status.split("_")[0].toLowerCase() !== "paid"
                 ? "Payment pending"
                 : "Paid"}
             </PaymentButton>
