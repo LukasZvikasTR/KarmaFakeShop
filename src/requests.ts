@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const createPurchase = async () => {
   console.log("clicked");
-  const result = await axios.post("/purchases", {
+  const result = await axios.post("http://localhost:8080/purchases", {
     items: [
       {
         amount: 80 * 100,
