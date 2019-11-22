@@ -287,21 +287,20 @@ const Purchases: FC<{}> = () => {
             </div>
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <PaymentButton
-              style={{
-                backgroundColor: "white",
-                color: "black",
-                borderColor:
-                  purchaseInfo.status.split("_")[0].toLowerCase() === "pending"
-                    ? "#fed8b1"
-                    : "green",
-                marginBottom: 20
-              }}
-            >
-              {purchaseInfo.status.split("_")[0].toLowerCase() !== "paid"
-                ? "Payment pending"
-                : "Paid"}
-            </PaymentButton>
+            {purchaseInfo.status.split("_")[0].toLowerCase() === "paid" && (
+              <PaymentButton
+                style={{
+                  backgroundColor: "green",
+                  color: "white",
+                  marginBottom: 20
+                }}
+              >
+                {purchaseInfo.status.split("_")[0].toLowerCase() !== "paid"
+                  ? "Payment pending"
+                  : "Paid"}
+              </PaymentButton>
+            )}
+
             <PaymentButton
               style={{
                 backgroundColor: "white",
@@ -312,18 +311,20 @@ const Purchases: FC<{}> = () => {
             >
               View Order{" "}
             </PaymentButton>
-            <PaymentButton
-              onClick={() =>
-                (window.location.href = `http://localhost:8080/pay/${purchaseId}`)
-              }
-              style={{
-                backgroundColor: "white",
-                color: "black",
-                borderColor: "black"
-              }}
-            >
-              Pay now{" "}
-            </PaymentButton>
+            {purchaseInfo.status.split("_")[0].toLowerCase() !== "paid" && (
+              <PaymentButton
+                onClick={() =>
+                  (window.location.href = `http://localhost:8080/pay/${purchaseId}`)
+                }
+                style={{
+                  backgroundColor: "white",
+                  color: "black",
+                  borderColor: "black"
+                }}
+              >
+                Pay now{" "}
+              </PaymentButton>
+            )}
           </div>
         </div>
       </div>
