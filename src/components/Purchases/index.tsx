@@ -279,14 +279,14 @@ const Purchases: FC<{}> = () => {
         >
           <div>
             <img
-              style={{ width: 150, height: 195, marginRight: 30 }}
-              src="https://images.asos-media.com/products/nike-air-force-1-07-trainers-in-white/12257646-1-white?$l$"
+              style={{ width: 175, height: 195, marginRight: 30 }}
+              src="https://cs1.livemaster.ru/storage/f9/29/649dcf09484b3433acce2c6992d3--handmade-shoes-hand-painted-sneakers-hippie-peace-symbol-rain.jpg"
             />
             <div style={{ marginTop: 10, fontSize: 25, fontWeight: "bold" }}>
               Item Description
             </div>
             <div style={{ marginTop: 10, fontSize: 20, fontWeight: 500 }}>
-              Nike Air Force 1 '07 Trainers In White, White UK 6
+              Peace sneakers, UK 6
             </div>
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
