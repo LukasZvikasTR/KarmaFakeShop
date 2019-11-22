@@ -9,7 +9,7 @@ const AddressDetails: FC<{ headingTitle: string }> = props => {
       <Styled.AddressSectionContentDetails>
         <Heading headingTitle={props.headingTitle} />
         <Styled.AddressSectionContentItem>
-          johndoe@gmail.com
+          John Doe
         </Styled.AddressSectionContentItem>
         <Styled.AddressSectionContentItem>
           Flat 14, Portman House, 16-18 Oxford Road
