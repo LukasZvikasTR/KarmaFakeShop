@@ -4,6 +4,10 @@ import { SeparatorLine } from "../../commonStyles";
 import { PaymentButton } from "../ShoppingCart";
 
 const Purchases: FC<{}> = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+
+  const purchaseId = urlParams.get("purchaseId");
+
   const renderMainHeading = () => (
     <div
       style={{
@@ -266,10 +270,24 @@ const Purchases: FC<{}> = () => {
               style={{
                 backgroundColor: "white",
                 color: "black",
-                borderColor: "black"
+                borderColor: "black",
+                marginBottom: 20
               }}
             >
               View Order{" "}
+            </PaymentButton>
+
+            <PaymentButton
+              onClick={() =>
+                (window.location.href = `http://localhost:8080/pay/${purchaseId}`)
+              }
+              style={{
+                backgroundColor: "white",
+                color: "black",
+                borderColor: "black"
+              }}
+            >
+              Pay now{" "}
             </PaymentButton>
           </div>
         </div>
